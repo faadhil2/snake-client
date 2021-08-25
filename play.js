@@ -1,26 +1,11 @@
 const net = require("net");
 const connect = require("./client");
-
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  stdin.on("data", handleUserInput);
-  return stdin;
-};
-
-const handleUserInput = function (key) {
-  // your code here
-  if (key === '\u0003') {
-    console.log("Game Ended!");
-    process.exit();
-  }
-};
+const setupInput = require("./input").setupInput;
 
 
 console.log("Connecting ...");
 connect();
+
 setupInput();
 
 // "Move: up" - move up one square (unless facing down)
