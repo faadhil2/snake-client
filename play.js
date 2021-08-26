@@ -4,9 +4,9 @@ const setupInput = require("./input").setupInput;
 
 
 console.log("Connecting ...");
-connect();
+//connect();
 
-setupInput();
+setupInput(connect());
 
 // "Move: up" - move up one square (unless facing down)
 // "Move: down" - move down one square (unless facing up)
